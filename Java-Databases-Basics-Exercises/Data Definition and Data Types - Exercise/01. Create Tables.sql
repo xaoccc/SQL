@@ -1,0 +1,9 @@
+CREATE TABLE minions (
+	id INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    `name` VARCHAR(50) NOT NULL, 
+    `age` INT(5) NOT NULL
+    );
+CREATE TABLE towns (
+	`town_id` INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL
+);
