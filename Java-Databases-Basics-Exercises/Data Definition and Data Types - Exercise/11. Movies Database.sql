@@ -23,7 +23,7 @@ CREATE TABLE `movies` (
     category_id INT,
     rating INT,
     notes TEXT) ;
-    
+
 
 INSERT INTO `directors` (`id`, `director_name`)
 VALUES(1, 'Hichkok'),
