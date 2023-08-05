@@ -1,6 +1,3 @@
-CREATE DATABASE `car_rental`;
-USE `car_rental`;
-
 CREATE TABLE `categories` (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     category VARCHAR(50) NOT NULL,
@@ -21,11 +18,12 @@ CREATE TABLE `cars` (
     car_condition TEXT,
 	available BOOL);
 
+
 CREATE TABLE `employees` (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    title VARCHAR(20) NOT NULL,
+    title VARCHAR(10),
     notes TEXT);
 
 
@@ -35,7 +33,7 @@ CREATE TABLE `customers` (
     full_name VARCHAR(50) NOT NULL,
     address VARCHAR(50) NOT NULL,
     city VARCHAR(30) NOT NULL,
-    zip_code INT NOT NULL,
+    zip_code INT,
     notes TEXT);
 
 CREATE TABLE `rental_orders` (
@@ -50,8 +48,8 @@ CREATE TABLE `rental_orders` (
     total_kilometrage INT,
     start_date DATE,
 	total_days INT,
-    rate_applied FLOAT NOT NULL,
-    tax_rate FLOAT NOT NULL,
+    rate_applied FLOAT,
+    tax_rate FLOAT,
     order_status BOOL NOT NULL,
     notes TEXT);
 
@@ -59,3 +57,23 @@ INSERT INTO `categories` (category, daily_rate, weekly_rate, monthly_rate, weeke
 VALUES ("small car", 50.5, 500.5, 1500.5, 70.5),
 	("big car", 60.5, 600.5, 2600.5, 80.5),
     ("very small car", 30.5, 300.5, 500.5, 50.5);
+
+INSERT INTO `cars` (plate_number, make, model, car_year, category_id, doors, car_condition, available)
+VALUES ("CB1650EE", "Skoda", "Rapid", 1996, 123456, 4, "like new", False),
+	("CB1651EE", "Skoda", "Rapid", 1996, 123457, 4, "like new", True),
+	("CB1652EE", "Skoda", "Rapid", 1996, 123458, 4, "like new", True);
+
+INSERT INTO `employees` (first_name, last_name)
+VALUES ("Ivan", "Ivanov"),
+	("Peter", "Petrov"),
+	("Sasho", "Sashov");
+
+INSERT INTO `customers` (driver_licence_number, full_name, address, city)
+VALUES (12345678, "Ivan Ivanov", "Borova gora 5", "Sofia"),
+	(23456789, "Peter Petrov", "Borova gora 7", "Sofia"),
+    (32749289, "Sasho Sashov", "Borova gora 9", "Sofia");
+
+INSERT INTO `rental_orders` (employee_id, customer_id, car_id, order_status)
+VALUES ( 1, 1, 1, true),
+	( 2, 2, 2, true),
+	( 3, 3, 3, true);
