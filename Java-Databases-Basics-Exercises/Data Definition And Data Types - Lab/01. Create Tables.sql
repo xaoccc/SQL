@@ -12,8 +12,6 @@ CREATE TABLE `products` (
 	`name` VARCHAR(50) NOT NULL,
     category_id INT NOT NULL
     );
-
-
 # with foreign key on the last column:
 
 CREATE TABLE `employees` (

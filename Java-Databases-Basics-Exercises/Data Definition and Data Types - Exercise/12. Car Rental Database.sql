@@ -71,7 +71,7 @@ CREATE TABLE `rental_orders` (
     car_condition VARCHAR(100),
     tank_level INT,
 	kilometrage_start INT,
-    kilometrage_end INT, 
+    kilometrage_end INT,
     total_kilometrage INT,
     start_date DATETIME,
     end_date DATETIME,
