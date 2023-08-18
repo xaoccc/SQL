@@ -1,1 +1,1 @@
-SELECT first_name, last_name, SELECT EXTRACT(YEAR FROM INTERVAL born) AS "year"  FROM authors;
+SELECT first_name, last_name, EXTRACT(YEAR FROM born)  FROM authors;
