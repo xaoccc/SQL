@@ -1,2 +1,2 @@
-SELECT title, ROUND("cost"::numeric, 3) AS modified_price FROM books
+SELECT title, ROUND("cost", 3) AS modified_price FROM books
 ORDER BY "id";

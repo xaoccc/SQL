@@ -1,4 +1,3 @@
-UPDATE books SET title = REPLACE(title, 'The', '***') ; 
-SELECT title FROM books
-WHERE title LIKE '***%'
+SELECT REPLACE(title, 'The', '***') FROM books
+WHERE SUBSTRING(title, 0, 4) = 'The'
 ORDER BY "id";
