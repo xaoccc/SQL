@@ -1,0 +1,1 @@
+SELECT "longitude" , ABS("longitude") AS "ABS" FROM  "apartments";
