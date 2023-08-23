@@ -1,0 +1,1 @@
+SELECT ROUND(MIN("deposit_charge"), 2) AS "Minimum Deposit Charge" FROM wizard_deposits;
