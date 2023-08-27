@@ -1,10 +1,7 @@
-DROP TABLE passports;
 CREATE TABLE passports (
-	"id" SERIAL PRIMARY KEY,
+	"id" INT GENERATED ALWAYS AS IDENTITY (START WITH 100 INCREMENT BY 1) PRIMARY KEY,
 	"nationality" VARCHAR(50)
 );
-
-SELECT setval('passports_id_seq', 99);
 
 INSERT INTO passports (nationality)
 VALUES('N34FG21B'), 
