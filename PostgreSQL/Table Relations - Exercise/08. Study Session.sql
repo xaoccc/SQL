@@ -1,9 +1,3 @@
-drop table "students" CASCADE;
-drop table "exams" CASCADE;
-drop table "study_halls" CASCADE;
-drop table "students_exams" CASCADE;
-
-
 CREATE TABLE IF NOT EXISTS "students" (
 	"id" SERIAL PRIMARY KEY,
 	"student_name" VARCHAR(50)
@@ -28,7 +22,7 @@ CREATE TABLE IF NOT EXISTS "study_halls" (
 	"id" SERIAL PRIMARY KEY,
 	"study_hall_name" VARCHAR(50),
 	"exam_id" INT,
-	CONSTRAINT fk_exam_id
+	CONSTRAINT fk_students_halls_exams
 	FOREIGN KEY (exam_id)
 	REFERENCES exams(id)
 );
@@ -38,15 +32,15 @@ VALUES ('Open Source', 102),
 	('Inspiration', 101),
 	('Creative', 103),
 	('Masterclass Hall', 103),
-	('Information Security', 103);
+	('Information Security Hall', 103);
 
 CREATE TABLE IF NOT EXISTS "students_exams" (
 	"student_id" INT,
-	CONSTRAINT fk_student_id
+	CONSTRAINT fk_students_exams_students
 	FOREIGN KEY (student_id)
 	REFERENCES students(id),
 	"exam_id" INT,
-	CONSTRAINT fk_exam_id
+	CONSTRAINT fk_students_exams_exams
 	FOREIGN KEY (exam_id)
 	REFERENCES exams(id)
 );
