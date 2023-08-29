@@ -1,13 +1,31 @@
--- Database: table_relations_geography_db
+DROP TABLE "customers" CASCADE;
+DROP TABLE "contacts" CASCADE;
 
--- DROP DATABASE IF EXISTS table_relations_geography_db;
+CREATE TABLE "customers" (
+	"id" SERIAL PRIMARY KEY,
+	"customer_name" VARCHAR(50)
+);
 
-CREATE DATABASE table_relations_geography_db
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'Bulgarian_Bulgaria.1252'
-    LC_CTYPE = 'Bulgarian_Bulgaria.1252'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
+CREATE TABLE "contacts" (
+	"id" SERIAL PRIMARY KEY,
+	"contact_name" VARCHAR(50), 
+	"phone" VARCHAR(20), 
+	"email" VARCHAR(50),  
+	"customer_id" INT,
+	CONSTRAINT fk_contacts_customers
+	FOREIGN KEY (customer_id)
+	REFERENCES customers(id) ON DELETE SET NULL
+);
+
+INSERT INTO "customers" ("customer_name")
+VALUES ('BlueBird Inc'),
+('Dolphin LLC');
+
+INSERT INTO "contacts" ("contact_name", "phone", "email", "customer_id")
+VALUES ('John Doe', '(408)-111-1234', 'john.doe@bluebird.dev', 1),
+('Jane Doe', '(408)-111-1235', 'jane.doe@bluebird.dev', 1),
+('David Wright', '(408)-222-1234', 'david.wright@dolphin.dev', 2);
+
+
+DELETE FROM "customers"
+WHERE id = 1;
