@@ -26,4 +26,19 @@ VALUES ('Rila Monastery ''St. Ivan of Rila''', 'BG'),
 ('Sümela Monastery', 'TR');
 
 ALTER TABLE "monasteries"
-ADD COLUMN "three_rivers" BOOL default false;
+ADD COLUMN "three_rivers" BOOL default FALSE;
+
+UPDATE monasteries AS m
+SET three_rivers = TRUE
+FROM (
+    SELECT countries_rivers.country_code
+    FROM countries_rivers 
+    GROUP BY countries_rivers.country_code
+    HAVING COUNT(*) >= 3
+) AS subquery
+WHERE m.country_code = subquery.country_code;
+
+SELECT monastery_name AS "Monastery", country_name AS "Country" FROM "monasteries" 
+JOIN countries USING(country_code)
+WHERE three_rivers IS NOT TRUE
+ORDER BY "monastery_name";
