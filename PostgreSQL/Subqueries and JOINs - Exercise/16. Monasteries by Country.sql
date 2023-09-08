@@ -26,7 +26,8 @@ VALUES ('Rila Monastery “St. Ivan of Rila”', 'BG'),
 ('Sümela Monastery', 'TR');
 
 ALTER TABLE "monasteries"
-ADD COLUMN "three_rivers" BOOL default FALSE;
+ADD COLUMN "three_rivers" BOOL DEFAULT FALSE;
+
 
 UPDATE monasteries AS m
 SET three_rivers = TRUE
@@ -34,7 +35,7 @@ FROM (
     SELECT countries_rivers.country_code
     FROM countries_rivers 
     GROUP BY countries_rivers.country_code
-    HAVING COUNT(*) >= 3
+    HAVING COUNT(*) > 3
 ) AS subquery
 WHERE m.country_code = subquery.country_code;
 
