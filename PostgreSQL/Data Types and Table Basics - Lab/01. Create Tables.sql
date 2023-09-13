@@ -6,7 +6,6 @@ CREATE TABLE employees (
   	salary NUMERIC(10,2),
   	devices_number INTEGER
 );
-
 CREATE TABLE departments (
   	id serial PRIMARY KEY NOT NULL,
   	name VARCHAR(50),
