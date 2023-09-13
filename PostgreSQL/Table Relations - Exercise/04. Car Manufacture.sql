@@ -1,7 +1,3 @@
-DROP TABLE "manufacturers" CASCADE;
-DROP TABLE "models" CASCADE;
-DROP TABLE "production_years" CASCADE;
-
 CREATE TABLE "manufacturers" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(50)
