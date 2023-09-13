@@ -13,7 +13,7 @@ CREATE TABLE "people" (
 	"first_name" VARCHAR(50),
 	"salary" NUMERIC(10,2),
 	"passport_id" INT NOT NULL,
-	CONSTRAINT fk_people_passport
+	CONSTRAINT fk_people_passports
 	FOREIGN KEY (passport_id)
 	REFERENCES passports(id)
 );
