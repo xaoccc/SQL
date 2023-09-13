@@ -1,6 +1,6 @@
 CREATE TABLE employees (
-    id serial PRIMARY KEY NOT NULL,
-  	first_name VARCHAR(30),
+	id serial PRIMARY KEY NOT NULL,
+	first_name VARCHAR(30),
   	last_name VARCHAR(50),
   	hiring_date DATE,
   	salary NUMERIC(10,2),
