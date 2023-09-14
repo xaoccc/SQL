@@ -16,7 +16,7 @@ CREATE TABLE "photos" (
 	"URL" VARCHAR,
 	"place" VARCHAR,
 	"customer_id" INT NOT NULL,
-	CONSTRAINT fk_customer_id
+	CONSTRAINT fk_photos_customers
 	FOREIGN KEY (customer_id)
 	REFERENCES customers(id)
 );
