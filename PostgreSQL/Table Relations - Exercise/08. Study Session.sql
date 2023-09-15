@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS "study_halls" (
 );
 
 INSERT INTO "study_halls" ("study_hall_name", "exam_id")
-VALUES ('Open Source', 102),
-	('Inspiration', 101),
-	('Creative', 103),
+VALUES ('Open Source Hall', 102),
+	('Inspiration Hall', 101),
+	('Creative Hall', 103),
 	('Masterclass Hall', 103),
 	('Information Security Hall', 103);
 
