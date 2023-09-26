@@ -1,5 +1,5 @@
 INSERT INTO "departments"
-	("id",	department,	manager_id)
+	("id", department, manager_id)
 VALUES
 	(10, 'Finance', 3),
 	(11, 'Information Services', 42),
