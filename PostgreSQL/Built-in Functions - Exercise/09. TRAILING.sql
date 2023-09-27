@@ -1,1 +1,1 @@
-SELECT "continent_name", TRIM(' ' FROM "continent_name") AS "trim"  FROM continents;
+SELECT "continent_name", RTRIM(continent_name) AS "trim"  FROM continents;
