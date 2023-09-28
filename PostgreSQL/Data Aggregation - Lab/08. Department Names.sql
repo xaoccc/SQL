@@ -1,4 +1,4 @@
-SELECT "id",	first_name,	last_name,	salary,	department_id,	
+SELECT "id", first_name, last_name,	salary,	department_id,	
   CASE
     WHEN department_id = 1 THEN 'Management'
     WHEN department_id = 2 THEN 'Kitchen Staff'
@@ -6,5 +6,4 @@ SELECT "id",	first_name,	last_name,	salary,	department_id,
     ELSE 'Other'
   END
   AS department_name FROM employees
-
 ORDER BY id;
