@@ -4,6 +4,6 @@ SELECT "id", first_name, last_name,	salary,	department_id,
     WHEN 2 THEN 'Kitchen Staff'
     WHEN 3 THEN 'Service Staff'
     ELSE 'Other'
-  END
-  AS department_name FROM employees
+  END AS department_name 
+  FROM employees
 ORDER BY id;
