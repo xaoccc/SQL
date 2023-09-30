@@ -1,6 +1,3 @@
-DROP TABLE "customers" CASCADE;
-DROP TABLE "contacts" CASCADE;
-
 CREATE TABLE "customers" (
 	"id" SERIAL PRIMARY KEY,
 	"customer_name" VARCHAR(50)
