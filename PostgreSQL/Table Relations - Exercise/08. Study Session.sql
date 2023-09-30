@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS "study_halls" (
 	"id" SERIAL PRIMARY KEY,
 	"study_hall_name" VARCHAR(50),
 	"exam_id" INT,
-	CONSTRAINT fk_students_halls_exams
+	CONSTRAINT fk_study_halls_exams
 	FOREIGN KEY (exam_id)
 	REFERENCES exams(id)
 );
