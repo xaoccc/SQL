@@ -36,8 +36,11 @@ CREATE TABLE IF NOT EXISTS "orders" (
 );
 
 CREATE TABLE IF NOT EXISTS "order_items" (
-	"order_id" SERIAL PRIMARY KEY,
+	"order_id" INT NOT NULL,
 	"item_id" INT NOT NULL,
+
+	CONSTRAINT fk_order_items
+	PRIMARY KEY(order_id, item_id),
   
   	CONSTRAINT fk_order_items_orders
 	FOREIGN KEY (order_id)
