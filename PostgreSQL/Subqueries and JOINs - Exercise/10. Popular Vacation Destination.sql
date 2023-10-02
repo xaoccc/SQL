@@ -5,6 +5,3 @@ SELECT
   GROUP BY a.country
   ORDER BY booking_count DESC;
 
-Тук отново тряба да налучкваме. Първо не се знае country от коя таблица се взима - apartments или customers. След това отново не е ясно по какво джойнваме. Общо комбинациите са 8. 4 за apartments и 4 за customers.
-
-  	counting the number of bookings "booking_id" made for each "country" - made BY customer or made FOR apartment???
