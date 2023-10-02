@@ -1,3 +1,5 @@
-SELECT "bookings"."apartment_id", "bookings"."booked_for", "customers"."first_name", "customers"."country" FROM "bookings"
-LEFT JOIN "customers" USING(customer_id)
-WHERE "job_type" LIKE '%Lead%';
+SELECT 
+  b.apartment_id, b.booked_for nights, c.first_name, c.country
+  FROM bookings AS b
+  JOIN customers AS c USING (customer_id)
+  WHERE c.job_type LIKE '%Lead%';
