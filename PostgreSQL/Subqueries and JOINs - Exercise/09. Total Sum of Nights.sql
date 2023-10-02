@@ -1,4 +1,5 @@
-SELECT "apartments"."name", SUM("bookings"."booked_for") FROM "apartments"
-JOIN "bookings" USING("apartment_id")
-GROUP BY "apartments"."name"
-ORDER BY "apartments"."name";
+SELECT 
+  a.name, SUM(b.booked_for) as sum FROM bookings AS b
+  JOIN apartments AS a USING (apartment_id)
+  GROUP BY a.name
+  ORDER BY a.name ASC;
