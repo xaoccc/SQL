@@ -1,5 +1,5 @@
-SELECT "mountains_countries"."country_code", "mountain_range", "peaks"."peak_name", "peaks"."elevation" FROM "mountains"
-JOIN "mountains_countries" ON "mountains_countries"."mountain_id" = "mountains"."id"
-JOIN "peaks" USING("mountain_id")
-WHERE "peaks"."elevation" > 2835 AND "country_code"='BG'
-ORDER BY "peaks"."elevation" DESC;
+SELECT mc.country_code, m.mountain_range, p.peak_name, p.elevation FROM mountains AS m
+JOIN mountains_countries AS mc ON mc.mountain_id = m.id
+JOIN peaks AS p USING (mountain_id) 
+WHERE country_code = 'BG' AND p.elevation > 2835
+ORDER BY elevation DESC;
