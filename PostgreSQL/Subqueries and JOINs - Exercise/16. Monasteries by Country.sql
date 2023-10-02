@@ -6,9 +6,9 @@ CREATE TABLE "monasteries" (
 );
 
 INSERT INTO "monasteries" ("monastery_name", "country_code")
-VALUES ('Rila Monastery “St. Ivan of Rila”', 'BG'),
-('Bachkovo Monastery “Virgin Mary”', 'BG'),
-('Troyan Monastery “Holy Mother''s Assumption”', 'BG'),
+VALUES ('Rila Monastery "St. Ivan of Rila"', 'BG'),
+('Bachkovo Monastery "Virgin Mary"', 'BG'),
+('Troyan Monastery "Holy Mother''s Assumption"', 'BG'),
 ('Kopan Monastery', 'NP'),
 ('Thrangu Tashi Yangtse Monastery', 'NP'),
 ('Shechen Tennyi Dargyeling Monastery', 'NP'),
