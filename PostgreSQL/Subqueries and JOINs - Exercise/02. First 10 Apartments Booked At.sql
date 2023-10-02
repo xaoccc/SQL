@@ -1,3 +1,3 @@
-SELECT "name" AS "Name", "country" AS "Country", DATE("bookings"."booked_at") AS "Bookd at" from "apartments"
-LEFT JOIN "bookings" ON "bookings"."booking_id" = "apartments"."booking_id"
+SELECT a.name AS "Name", a.country AS "Country", DATE(b.booked_at) AS "Booked at" FROM apartments AS a 
+LEFT JOIN bookings AS b USING (booking_id)
 LIMIT 10;
