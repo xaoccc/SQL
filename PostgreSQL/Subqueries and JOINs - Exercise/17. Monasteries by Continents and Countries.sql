@@ -20,3 +20,5 @@ SELECT
 
 "country_code" - column should be exactly two characters long. 
 ... add a new row to the "monasteries" table with 'Hanga Abbey' as the name and 'Tanzania' as the country code ...
+
+Another row should also be inserted into the "monasteries" table with 'Myin-Tin-Daik' as the name and 'Myanmar' as the country code. - this should be ignored!
