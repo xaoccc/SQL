@@ -1,3 +1,6 @@
-SELECT "bookings"."booking_id" AS "Booking ID", "customers"."first_name" AS "Customer Name" FROM "bookings"
-CROSS JOIN "customers"
-ORDER BY "Customer Name";
+SELECT 
+  b.booking_id AS "Booking ID", 
+  c.first_name AS "Customer Name"
+  FROM bookings AS b
+  CROSS JOIN customers AS c
+  ORDER BY "Customer Name" ASC;
