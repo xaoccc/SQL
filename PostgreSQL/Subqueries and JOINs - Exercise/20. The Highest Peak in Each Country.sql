@@ -1,8 +1,8 @@
 SELECT 
-    country_name,
-    highest_peak_name,
-    highest_peak_elevation,
-    mountain
+    country_name AS "Country",
+    highest_peak_name AS "Highest Peak Name" ,
+    highest_peak_elevation AS "Highest Peak Elevation",
+    mountain AS "Mountain"
 FROM (
     SELECT 
         c.country_name,
