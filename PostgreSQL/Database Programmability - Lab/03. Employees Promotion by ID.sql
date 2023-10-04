@@ -3,12 +3,7 @@ AS
 $$
   BEGIN
     UPDATE employees
-    SET salary = salary * 1.05
-      WHERE employee_id = (
-      SELECT employee_id 
-      FROM employees AS e 
-      JOIN departments AS d USING (department_id)
-      WHERE employee_id = e_id);
+    SET salary = salary * 1.05 WHERE employee_id = e_id;
   END
 $$
 LANGUAGE plpgsql;
@@ -24,12 +19,7 @@ LANGUAGE plpgsql;
       
 --     ELSE
 --       UPDATE employees
---       SET salary = salary * 1.05
---         WHERE employee_id = (
---         SELECT employee_id 
---         FROM employees AS e 
---         JOIN departments AS d USING (department_id)
---         WHERE employee_id = e_id);
+--       SET salary = salary * 1.05 WHERE employee_id = e_id);
 --     END IF;
 --     COMMIT;
 --   END
