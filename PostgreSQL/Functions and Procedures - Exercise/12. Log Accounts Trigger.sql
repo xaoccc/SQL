@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS logs (
 
  END;
  $$
+LANGUAGE plpgsql;
 
  CREATE TRIGGER tr_account_balance_change
  AFTER UPDATE OF balance ON accounts
