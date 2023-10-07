@@ -66,4 +66,8 @@ CREATE table	"animals_cages" (
   CONSTRAINT fk_animals_cages_animals
   FOREIGN KEY (animal_id)
   REFERENCES animals(id) ON UPDATE CASCADE ON DELETE CASCADE
+	
+	
 );
+
+ALTER TABLE animals_cages ADD PRIMARY KEY (cage_id, animal_id);
