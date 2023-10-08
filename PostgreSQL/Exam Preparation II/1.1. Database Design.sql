@@ -1,0 +1,4 @@
+CREATE TABLE addresses (
+	id SERIAL PRIMARY KEY
+	name VARCHAR(100)
+);
