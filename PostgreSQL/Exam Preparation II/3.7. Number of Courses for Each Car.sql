@@ -12,3 +12,5 @@ LEFT JOIN courses AS c ON cars.id = c.car_id
 GROUP BY car_id, make, mileage
 HAVING COALESCE(COUNT(c.id), 0) <> 2
 ORDER BY count_of_courses DESC, c.car_id;
+
+-- защо не се появяват id-тата на колите???
