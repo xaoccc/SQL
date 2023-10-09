@@ -18,7 +18,7 @@ CREATE TABLE drivers (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
-  age INT NOT NULL,
+  age INT NOT NULL CHECK ("age" > 0),
   rating NUMERIC DEFAULT 5.5
 );
 
