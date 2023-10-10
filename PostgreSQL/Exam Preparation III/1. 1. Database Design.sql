@@ -1,0 +1,29 @@
+CREATE TABLE IF NOT EXISTS categories(
+	id SERIAL NOT NULL,
+	name VARCHAR(50) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS addresses(
+	id SERIAL NOT NULL,
+	street_name VARCHAR(100) NOT NULL,
+	street_number INT SET(street_number>0) NOT NULL,
+	town VARCHAR(30) NOT NULL,
+	country VARCHAR(50) NOT NULL,
+	zip_code INT SET(street_number>0) NOT NULL,
+);
+CREATE TABLE IF NOT EXISTS publishers(
+	id SERIAL NOT NULL,
+);
+CREATE TABLE IF NOT EXISTS players_ranges(
+	id SERIAL NOT NULL,
+);
+CREATE TABLE IF NOT EXISTS creators(
+	id SERIAL NOT NULL,
+);
+CREATE TABLE IF NOT EXISTS board_games(
+	id SERIAL NOT NULL,
+);
+CREATE TABLE IF NOT EXISTS creators_board_games(
+	id SERIAL NOT NULL,
+);
+
+
