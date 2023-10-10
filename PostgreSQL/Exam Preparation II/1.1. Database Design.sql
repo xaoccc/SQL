@@ -19,7 +19,7 @@ CREATE TABLE drivers (
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   age INT NOT NULL CHECK ("age" > 0),
-  rating NUMERIC DEFAULT 5.5
+  rating NUMERIC(3,2) DEFAULT 5.5
 );
 
 CREATE TABLE cars (
