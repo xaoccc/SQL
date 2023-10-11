@@ -24,7 +24,7 @@ $$
 LANGUAGE plpgsql;
 
 CREATE OR REPLACE TRIGGER tr_send_email_on_balance_change
-AFTER UPDATE OF old_sum ON logs
+AFTER UPDATE ON logs
 FOR EACH ROW
-WHEN (NEW.old_sum <> NEW.new_sum)
+WHEN (OLD.new_sum <> NEW.new_sum)
 EXECUTE PROCEDURE trigger_fn_send_email_on_balance_change();
