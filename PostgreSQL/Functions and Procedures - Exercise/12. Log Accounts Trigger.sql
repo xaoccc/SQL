@@ -8,8 +8,10 @@ CREATE TABLE IF NOT EXISTS logs (
  RETURNS TRIGGER AS 
  $$
  BEGIN
-
-  RETURN NEW;
+	
+ 	INSERT INTO logs (account_id, old_sum, new_sum)
+	VALUES (OLD.id, OLD.balance, NEW.balance);
+  	RETURN NEW;
 
  END;
  $$
