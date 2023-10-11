@@ -8,18 +8,18 @@ CREATE TABLE IF NOT EXISTS addresses(
 	street_number INT CHECK(street_number>0) NOT NULL,
 	town VARCHAR(30) NOT NULL,
 	country VARCHAR(50) NOT NULL,
-	zip_code INT CHECK(street_number>0) NOT NULL
+	zip_code INT CHECK(zip_code>0) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS publishers(
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(30) NOT NILL,
+	name VARCHAR(30) NOT NULL,
 	address_id INT NOT NULL,
 	website VARCHAR(40),
 	phone VARCHAR(20),
 	
 	CONSTRAINT fk_publishers_addresses 
 	FOREIGN KEY (address_id)
-	REFERENCES addresses(id)
+	REFERENCES addresses(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS players_ranges(
 	id SERIAL PRIMARY KEY,
@@ -43,21 +43,29 @@ CREATE TABLE IF NOT EXISTS board_games(
 	
 	CONSTRAINT fk_board_games_categories
 	FOREIGN KEY (category_id)
-	REFERENCES categories(id),
+	REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
 	
 	CONSTRAINT fk_board_games_publishers
 	FOREIGN KEY (publisher_id)
-	REFERENCES publishers(id),
+	REFERENCES publishers(id) ON UPDATE CASCADE ON DELETE CASCADE,
 	
 	CONSTRAINT fk_board_games_players_ranges
 	FOREIGN KEY (players_range_id)
-	REFERENCES players_ranges(id)
+	REFERENCES players_ranges(id) ON UPDATE CASCADE ON DELETE CASCADE
 	
 );
+
 CREATE TABLE IF NOT EXISTS creators_board_games(
 	creator_id INT NOT NULL,
 	board_game_id INT NOT NULL,	
-	PRIMARY KEY(creator_id, board_game_id)
+	
+	CONSTRAINT fk_creators_board_games_creators 
+	FOREIGN KEY (creator_id)
+	REFERENCES creators(id) ON UPDATE CASCADE ON DELETE CASCADE,
+		
+	CONSTRAINT fk_creators_board_games_board_games
+	FOREIGN KEY (board_game_id)
+	REFERENCES board_games(id) ON UPDATE CASCADE ON DELETE CASCADE
+
+	
 );
-
-
