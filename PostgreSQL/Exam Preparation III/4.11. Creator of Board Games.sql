@@ -1,14 +1,14 @@
-CREATE OR REPLACE FUNCTION fn_courses_by_client(phone_num VARCHAR(20)) 
+CREATE OR REPLACE FUNCTION fn_creator_with_board_games(kreator VARCHAR(30)) 
 RETURNS INT AS 
 $$
   DECLARE res INT;
   BEGIN
-    SELECT COUNT(co.id) FROM courses AS co
-    JOIN clients AS c ON co.client_id = c.id
-    WHERE c.phone_number = phone_num
+    SELECT COUNT(bg.id) FROM board_games AS bg
+    JOIN creators_board_games AS cbg ON cbg.board_game_id = bg.id 
+    JOIN creators AS c ON cbg.creator_id = c.id 
+    WHERE c.first_name = kreator
     INTO res;
     RETURN res;
-
   END;
 $$
 LANGUAGE plpgsql;
