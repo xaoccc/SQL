@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS notification_emails (
 
 );
 
-
 CREATE OR REPLACE FUNCTION trigger_fn_send_email_on_balance_change()
 RETURNS TRIGGER AS
 $$
